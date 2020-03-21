@@ -168,4 +168,3 @@ def match(regex, s):
     return nfa
 
 print(match("a.b|b*","bbbbbbbbbb"))
->>>>>>> 1d9bc2ca1e501dd8abe9bc86041c09bfd8c9edc1
