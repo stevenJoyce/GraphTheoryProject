@@ -1,46 +1,3 @@
-<<<<<<< HEAD
-#Steven Joyce - classes used in Thompson's Constructions
-
-class State:
-   #Every State has 0, 1 or 2 edges from it
-   edges =[]
-
-   #labels for the arrows, none means epsilon
-   label = None
-
-   #Constructor for the class
-   def __init__(self, label=None, edges=[]):
-       self.label = label
-       self.edges = edges
-
-class Fragment:
-    #start state of NFA fragment
-    start=None
-    #accept state of NFA fragment
-    accept=None
-
-    #constructor
-    def __init__(self,start,accept):
-        self.start = start
-
-        self.accept=accept
-
-
-def regex_compile(infix):
-    postfix = shunt_(infix)
-
-
-
-def match(regex, s):
-    #this function returns true only if the regular expression
-    #regex matches the string s completely. It returns false otherwise
-    
-    #compiles the regular expression into an NFA
-    nfa = regex_compile(regex)
-    #Aks the NFA if the regualr expression matches the string s
-    nfa.match(s)
-
-=======
 # Steven Joyce
 # Thompson's construction classes
 
@@ -108,7 +65,7 @@ def shunt(infix):
     # convert output list to string
         return ''.join(postfix)
 
-def regex_compile(infix):
+def compile(infix):
     postfix = shunt(infix)
     postfix = list(postfix)[::-1]
 
@@ -157,15 +114,46 @@ def regex_compile(infix):
 
     # The NFA stack should have exactly one NFA on it.
     return nfa_stack.pop()
+#follow all the e's arrows and add state to set
+def followE(state, current):
+    #only run when state has not be visited already
+    if state not in current:
+        #put state into current
+        current.add(state)
+        #check if the state is labelled E
+        if state.label is None:
+            #loop throught the states being pointed to 
+            for currState in state.edges:
+                #follow all of their E labels as well
+                followE(currState, current)
 
 def match(regex, s):
     # This function will return true if and only if the regular expression
     # regex (fully) matches the string s . it returns false otherwise.
 
     # compile the regular expressions into an NFA
-    nfa = regex_compile(regex)
-    # Ask  the NFA if it matches the string s.
-    return nfa
+    nfa = compile(regex)
+    #Match the regular expression to the string s
+    current = set()
+    followE(nfa.start, current)
+    previous = set()
+    
+    #looping through the characters in s
+    for c in s:
+        #to keep track of where we were and are now
+        previous = current
+        #empty the set to create an empty set about to be used
+        current = set()
+        #looping through the elements in the previous states
+        for state in previous:
+            #Only follow arrows not labelled by e - epsilon
+            if state.label is not None:
+                if state.label == c:
+                    #add states at the end of the arrow to current
+                    followE(state.edges[0], current)
+
+
+    # Ask  the NFA if it matches the string s
+    return (nfa.accept in current)
 
 print(match("a.b|b*","bbbbbbbbbb"))
->>>>>>> 1d9bc2ca1e501dd8abe9bc86041c09bfd8c9edc1
