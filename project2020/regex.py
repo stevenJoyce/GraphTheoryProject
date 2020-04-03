@@ -14,7 +14,6 @@ class Fragment:
     start = None
     # Accept state of the NFA fragment
     accept = None
-
     # Constructor
     """ NFA fragment that contains a start state and an accept state """
     def __init__(self, start, accept):
@@ -25,12 +24,8 @@ def shunt(infix):
     """ Used to return an infix regular expression in postfix """
     # convert input into stack-ish list
     infix  = list(infix)[::-1]
-    # convert input into stack-ish list
-    infix  = list(infix)[::-1]
-    #operator stack 
-    opers = []
-    #output list.
-    postfix = []
+    #operator stack and output list.
+    postfix, opers = [], []
     # operator precedence
     prec = {'*':100, '.':80, '|':60, ')':40, '(':20}
     # Loop through the input one character at a time
@@ -66,11 +61,7 @@ def shunt(infix):
 
 def compile(infix):
     """ Used to return an NFA Fragment that represents an infix regular expression"""
-    #Convert infix to postfix
-    postfix = shunt(infix)
-    #Make postfix a stack of characters
-    postfix = list(postfix)[::-1]
-    #Stack for NFA Fragments
+    #Convert infix to postfix andc create a Stack for NFA Fragments
     postfix = shunt(infix)
     postfix = list(postfix)[::-1]
     nfa_stack = []
@@ -130,16 +121,13 @@ def followE(state, current):
                 followE(currState, current)
 
 def match(regex, s):
-    # This function will return true if and only if the regular expression
-    # regex (fully) matches the string s . it returns false otherwise.
-
+    """This function will return true if and only if the regular expression regex (fully) matches the string s. Returns false otherwise. """
     # compile the regular expressions into an NFA
     nfa = compile(regex)
     #Match the regular expression to the string s
     current = set()
     followE(nfa.start, current)
     previous = set()
-    
     #looping through the characters in s
     for c in s:
         #to keep track of where we were and are now
@@ -153,6 +141,5 @@ def match(regex, s):
                 if state.label == c:
                     #add states at the end of the arrow to current
                     followE(state.edges[0], current)
-
     # Ask  the NFA if it matches the string s
     return (nfa.accept in current)

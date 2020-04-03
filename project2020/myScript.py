@@ -6,7 +6,8 @@ print("Steven Joyce - GOO362012");
 print("Graph Theory Project 2020");
  
 #using regex run the match method
-print(regex.match("a.b|b*","bbbbbbbbbb"))
+print( "Test to compare a.b|b* to bbbbbb") 
+print(regex.match("a.b|b*","bbbbbb"))
 
 def UserChoice():
     """Used to ask user if they want to run a new test with user input"""

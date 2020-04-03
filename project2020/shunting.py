@@ -7,13 +7,10 @@ print("Input is:", infix)
 print("Expected :", "ab|c*.")
 #Convert input to a stack-ish list
 infix = list(infix)[::-1]
-
 #Operator
 opers = []
-
 #output list
 postfix = []
-
 #operator precedence
 prec = {'*': 100, '.': 80, '|': 60, ')': 40, '(': 20}
 
@@ -40,7 +37,6 @@ while infix:
     else:
         #typically we just push the character to the output
         postfix.append(c)
-
 #pop all operators to the output
 while opers:
     postfix.append(opers.pop())
