@@ -9,6 +9,7 @@ class State:
         self.edges = edges if edges else []
         # Label for the arrows.None means epsilon.
         self.label = label
+
 class Fragment:
     # Start state of the NFA fragment
     start = None
@@ -28,7 +29,8 @@ def shunt(infix):
     postfix, opers = [], []
     # operator precedence
     prec = {'*':100, '.':80, '|':60, ')':40, '(':20}
-    # Loop through the input one character at a time
+
+# Loop through the input one character at a time
     while infix:
         # pop a character  from the input.
         c = infix.pop()
@@ -107,6 +109,7 @@ def compile(infix):
 
     # The NFA stack should have exactly one NFA on it.
     return nfa_stack.pop()
+
 #follow all the e's arrows and add state to set
 def followE(state, current):
     #only run when state has not be visited already

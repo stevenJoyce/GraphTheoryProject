@@ -1,13 +1,27 @@
 # Steven Joyce
-#Used to run a few regulae expressions
+#Used to run a few regular expressions and test the algorithms
+#User can also run their own tests
 #import all classes from regex.py
 import regex
-print("Steven Joyce - GOO362012");
+print("Steven Joyce - G00362012");
 print("Graph Theory Project 2020");
  
 #using regex run the match method
+#true match
 print( "Test to compare a.b|b* to bbbbbb") 
-print(regex.match("a.b|b*","bbbbbb"))
+print("result = ",regex.match("a.b|b*","bbbbbb"))
+#false match
+print("Test to compare a.b|b* to bbx")
+print("result = ",regex.match("a.b|b*","bbx"))
+#other false match
+print("Test to compare a.b to ab")
+print("result = ",regex.match("a.b","ab"))
+#other true  match
+print("Test to compare b** to b")
+print("result = ",regex.match("b**","b"))
+#empty string match
+print("Test to compare b* to empty string " " ")
+print("result = ",regex.match("b*",""))
 
 def UserChoice():
     """Used to ask user if they want to run a new test with user input"""
