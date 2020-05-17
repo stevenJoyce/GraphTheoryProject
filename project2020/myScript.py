@@ -3,6 +3,7 @@
 #User can also run their own tests
 #import all classes from regex.py
 import regex
+
 print("Steven Joyce - G00362012");
 print("Graph Theory Project 2020");
  

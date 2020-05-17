@@ -1,6 +1,7 @@
 # Steven Joyce
 # Thompson's Construction classes
-
+#import argparse to allow user input from command line
+import argparse
 class State:
     """ A state that has 1 or 2 edges, all edges will be labelled by label """
     # Constructor for the Class
@@ -146,4 +147,12 @@ def match(regex, s):
                     followE(state.edges[0], current)
     # Ask  the NFA if it matches the string s
     return (nfa.accept in current)
+
+#Allow user to input a string to match to an NFA
+parser = argparse.ArgumentParser(add_help=False)
+parser.add_argument("-nfa", required=True, help="nfa to be used to compare to a string",type=str)
+parser.add_argument("-string", required=True, help="input string that will be compared to inputted nfa",type=str)
+parser.add_argument('-h', '--help', action='help', default=argparse.SUPPRESS, help='Default Help Message of Project Command line')
+args = parser.parse_args()
+print(" Result of comparision is ", match(str(args.nfa), str(args.string)))
 

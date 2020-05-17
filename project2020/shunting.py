@@ -1,10 +1,12 @@
 # Steven Joyce
 #The Shunting Yard Algorithm for Regular Expressions
+#import unittest to import 
+import unittest
 #default input
 infix = "(a|b).c*"
 print("Input is:", infix)
-#Expected output : "ab|c*."
-print("Expected :", "ab|c*.")
+exOutput = "ab|c*."
+print("Expected :", exOutput)
 
 #Convert infix variable into a stack-ish list
 infix = list(infix)[::-1]
@@ -46,3 +48,13 @@ postfix = ''.join(postfix)
 
 #print the result
 print("Output is:", postfix)
+
+#class to test the shunting yard algorithm
+class TestAlgorithm(unittest.TestCase):
+    def test_upper(self):
+        self.assertEqual(exOutput,postfix)
+        self.assertFalse(exOutput,postfix)
+
+if __name__ == '__main__':
+    unittest.main()
+
