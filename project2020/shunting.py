@@ -51,9 +51,8 @@ print("Output is:", postfix)
 
 #class to test the shunting yard algorithm
 class TestAlgorithm(unittest.TestCase):
-    def test_upper(self):
+    def test_true(self):
         self.assertEqual(exOutput,postfix)
-        self.assertFalse(exOutput,postfix)
 
 if __name__ == '__main__':
     unittest.main()
