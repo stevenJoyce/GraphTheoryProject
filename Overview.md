@@ -1,26 +1,28 @@
-![](RackMultipart20200518-4-x20wcd_html_9f602a99b3366f46.gif)
-
-|
-##
-# **Graph Theory Project Report**
-
- ![](RackMultipart20200518-4-x20wcd_html_49d178840f048537.gif) ![](RackMultipart20200518-4-x20wcd_html_974d118ce6ea344c.gif) |
-| --- |
-| **Table of Contents**![](RackMultipart20200518-4-x20wcd_html_f0210c35e834828f.gif) |
-| Student name: Steven Joyce Student ID: G00362012Lecturer: Ian McLoughlin ![](RackMultipart20200518-4-x20wcd_html_66f126f2148ac934.gif) |
-|
- |
-|
-## **Graph Theory Project Report**
- ![](RackMultipart20200518-4-x20wcd_html_dff76bca174652a9.gif)
+# Graph Theory Project Report
+Student name: Steven Joyce 
+Student ID: G00362012
+Lecturer: Ian McLoughlin
 
 # Contents
 
-[Introduction 2](#_Toc40645245)[Problem Statement 2](#_Toc40645246)[Overview 2](#_Toc40645247)[Run 3](#_Toc40645248)[Steps to download the code 3](#_Toc40645249)[Steps to install python 3](#_Toc40645250)[Steps to run the code 3](#_Toc40645251)[Test 4](#_Toc40645252)[Regex file 4](#_Toc40645253)[Shunting file 4](#_Toc40645254)[myScript.py file 4](#_Toc40645255)[RegexUserCommand.py file 5](#_Toc40645256)[Algorithm 6](#_Toc40645257)[Shunting Algorithm 6](#_Toc40645258)[Thompson&#39;s Construction 6](#_Toc40645259)[References 6](#_Toc40645260)[Webpages 6](#_Toc40645261)[Videos 6](#_Toc40645262)
-
-
- |
- |
+Introduction
+Problem Statement
+Overview
+Run 
+Steps to download the code 
+Steps to install python 
+Steps to run the code 
+Test
+Regex file
+Shunting file 
+myScript.py file
+RegexUserCommand.py file 
+Algorithm 
+Shunting Algorithm 
+Thompson's Construction
+References 
+Webpages 
+Videos
 
 # Introduction
 
@@ -40,22 +42,17 @@ You should explain how to download and run your code, including instructions of 
 
 ## Steps to download the code
 
-1. Go to this GitHub repository: [https://github.com/stevenJoyce/GraphTheoryProject](https://github.com/stevenJoyce/GraphTheoryProject)
+1. Go to this GitHub repository: [https://github.com/stevenJoyce/GraphTheoryProject]
 2. On this page click this button
-
-![](RackMultipart20200518-4-x20wcd_html_83a3a8a635457921.png)
-
- ![](RackMultipart20200518-4-x20wcd_html_98b601b66dfab1e.gif)
-1. When button is clicked this menu appears, click this icon
-
-![](RackMultipart20200518-4-x20wcd_html_c6af3ed647631078.png)
-
-1. Open up your virtual machine
-2. Check if virtual machine has git installed using git –version
-3. If git is not installed, install it by typing sudo apt install git
-4. Create a new folder using mkdir foldername
-5. Open the newly created folder by typing cd foldername
-6. When folder opens type: git clone and paste in the copied link from step 3
+ ![gitclone](https://github.com/stevenJoyce/GraphTheoryProject/blob/master/images/gitclonebutton.PNG)
+3. When button is clicked this menu appears, click this icon
+![gitlink](https://github.com/stevenJoyce/GraphTheoryProject/blob/master/images/gitlinkoptions.PNG)
+4. Open up your virtual machine
+5. Check if virtual machine has git installed using git –version
+6. If git is not installed, install it by typing sudo apt install git
+7. Create a new folder using mkdir foldername
+8. Open the newly created folder by typing cd foldername
+9. When folder opens type: git clone and paste in the copied link from step 3
 
 The Repository is now cloned and able to view and use
 
@@ -63,7 +60,9 @@ The Repository is now cloned and able to view and use
 
 1. Open your virtual machine
 2. Check if your vm has vi – this is a programming text editor
-3. If it does not
+3. If it does not run the following lines of code in the command prompt 
+ 3a.sudo apt update 
+ 3b.sudo apt install python3 python3-dev python3-venv
 
 ## Steps to run the code
 
@@ -73,24 +72,18 @@ The Repository is now cloned and able to view and use
 4. Type python3 shunting.py to run the tests in the shunting file
 5. Type python3 regexUserCommand -nfa &quot;nfa input&quot; -string &quot;string input&quot; to test the file.
 6. Lastly type python3 myScript.py to run the myScript file
-7. When the first tests are completed, the user can now enter y to run a test of the own
-
-Or n to exit the test. If any other input is entered the user will get the choice again.
+7. When the first tests are completed, the user can now enter y to run a test of the own Or n to exit the test. If any other input is entered the user will get the choice again.
 
 # Test
 
-Explain how to run the tests incorporated in your code.
-
 ## Regex file
-
 1. This is tested in the myScript file
 
 ## Shunting file
-
 1. First type python3 shunting.py to test the shunting file
 2. The result should be
 
-![](RackMultipart20200518-4-x20wcd_html_4e555f050e47072c.png)
+![shuntingOutput](https://github.com/stevenJoyce/GraphTheoryProject/blob/master/images/shuntingOutput.PNG)
 
 This file tests the code using the unittest package in python
 
@@ -99,31 +92,29 @@ This file tests the code using the unittest package in python
 - Now type python3 myScript.py to test the myScript file
 - The outputted result should be
 
-![](RackMultipart20200518-4-x20wcd_html_d07b2d23d99b0eea.png)
+![defaultsearch](https://github.com/stevenJoyce/GraphTheoryProject/blob/master/images/myScriptOutput.PNG)
 
-- If user inputs &quot;y&quot; – the user can run a new search that is all user input
+- If user inputs 'y'; – the user can run a new search that is all user input
 
-![](RackMultipart20200518-4-x20wcd_html_1a6029159674b34e.png)
+![inputY](https://github.com/stevenJoyce/GraphTheoryProject/blob/master/images/myScriptY.PNG)
 
-- If user inputs any letter or number not &quot;y&quot; or &quot;n&quot; , the output is
+- If user inputs any letter or number not 'y' or 'n' , the output is
 
-![](RackMultipart20200518-4-x20wcd_html_360b7101b23450bb.png)
+![inputWrong](https://github.com/stevenJoyce/GraphTheoryProject/blob/master/images/newScriptWrongInput.PNG)
 
 - If User inputs &quot;n&quot; – the test will end user exits that file
 
-![](RackMultipart20200518-4-x20wcd_html_42dda2c536e6042.png)
+![inputN](https://github.com/stevenJoyce/GraphTheoryProject/blob/master/images/myScriptN.PNG)
 
 - All aspects of the file is now tested
 
 ## RegexUserCommand.py file
 
-- To test this file the user will input a custom comparison in the command line using the argparse library in Python3.
-  1. The user will type python3 regexUserCommand -nfa &quot;nfa input&quot; -string &quot;string input&quot;
-
-![](RackMultipart20200518-4-x20wcd_html_9dd7a031bacde8ea.png)
-
-1. To get help the user will type in python 3 regexUserCommand -h or –help
-![Image of Yaktocat](https://octodex.github.com/images/yaktocat.png)
+To test this file the user will input a custom comparison in the command line using the argparse library in Python3.
+1. The user will type python3 regexUserCommand -nfa &quot;nfa input&quot; -string &quot;string input&quot;
+![usercommandline](https://github.com/stevenJoyce/GraphTheoryProject/blob/master/images/userInputRegex.PNG)
+2. To get help the user will type in python 3 regexUserCommand -h or –help
+![userhelp](https://github.com/stevenJoyce/GraphTheoryProject/blob/master/images/userCommandHelp.PNG)
 
 # Algorithm
 
@@ -137,35 +128,30 @@ An Example of this algorithm
 
 Infix === Postfix
 
-(a.b)|c\* -----\&gt; ab|c\*
+(a.b)|c\* -----> ab|c\*
 
 | **Current Symbol** | **Operator Stack** | **Postfix String** |
 | --- | --- | --- |
-| A |
- | A |
+| A |  | A |
 | . | . | A |
 | B | . | AB |
 | | | .| | AB| |
 | C | . | AB|C |
 | \* | . \* | AB|C \*. |
 
-## Thompson&#39;s Construction
+## Thompson's Construction
 
-Thompson&#39;s construction is a way of converting a regular expression into a non-deterministic finite automation (NFA). It was designed by Ken Thompson. It is also called the McNaughton-Yamada-Thompson Algorithm. We normally would assume the regular expression is a postfix expression. It is already converted using the shunting yard algorithm.
+Thompson's construction is a way of converting a regular expression into a non-deterministic finite automation (NFA). It was designed by Ken Thompson. It is also called the McNaughton-Yamada-Thompson Algorithm. We normally would assume the regular expression is a postfix expression. It is already converted using the shunting yard algorithm.
 
 Example taken from [https://www.geeksforgeeks.org/regular-expression-to-nfa/](https://www.geeksforgeeks.org/regular-expression-to-nfa/)
 
-![](RackMultipart20200518-4-x20wcd_html_6b20a865503ef50a.png)
-
 # References
-
-##
 
 ## Webpages
 
 [https://en.wikipedia.org/wiki/Thompson%27s\_construction](https://en.wikipedia.org/wiki/Thompson%27s_construction)
 
-[https://www.tutorialspoint.com/automata\_theory/constructing\_fa\_from\_re.htm](https://www.tutorialspoint.com/automata_theory/constructing_fa_from_re.htm)
+[https://www.tutorialspoint.com/automata\_theory/constructing\_fa\_from\_re.htm] (https://www.tutorialspoint.com/automata_theory/constructing_fa_from_re.htm)
 
 [https://www.researchgate.net/figure/Thompsons-NFA-construction-The-regular-expression-for-a-character-a-S-corresponds-to\_fig1\_1959575](https://www.researchgate.net/figure/Thompsons-NFA-construction-The-regular-expression-for-a-character-a-S-corresponds-to_fig1_1959575)
 
