@@ -3,27 +3,6 @@ Student name: Steven Joyce
 Student ID: G00362012
 Lecturer: Ian McLoughlin
 
-# Contents
-
-Introduction
-Problem Statement
-Overview
-Run 
-Steps to download the code 
-Steps to install python 
-Steps to run the code 
-Test
-Regex file
-Shunting file 
-myScript.py file
-RegexUserCommand.py file 
-Algorithm 
-Shunting Algorithm 
-Thompson's Construction
-References 
-Webpages 
-Videos
-
 # Introduction
 
 An introduction to your repository and the code. Describe what is contained in the repository and what the code does.
@@ -44,9 +23,13 @@ You should explain how to download and run your code, including instructions of 
 
 1. Go to this GitHub repository: [https://github.com/stevenJoyce/GraphTheoryProject]
 2. On this page click this button
+
  ![gitclone](https://github.com/stevenJoyce/GraphTheoryProject/blob/master/images/gitclonebutton.PNG)
+ 
 3. When button is clicked this menu appears, click this icon
+
 ![gitlink](https://github.com/stevenJoyce/GraphTheoryProject/blob/master/images/gitlinkoptions.PNG)
+
 4. Open up your virtual machine
 5. Check if virtual machine has git installed using git –version
 6. If git is not installed, install it by typing sudo apt install git
@@ -130,20 +113,14 @@ Infix === Postfix
 
 (a.b)|c\* -----> ab|c\*
 
-| **Current Symbol** | **Operator Stack** | **Postfix String** |
-| --- | --- | --- |
-| A |  | A |
-| . | . | A |
-| B | . | AB |
-| | | .| | AB| |
-| C | . | AB|C |
-| \* | . \* | AB|C \*. |
+![shuntingDiagram](https://github.com/stevenJoyce/GraphTheoryProject/blob/master/images/shunting.PNG)
 
 ## Thompson's Construction
 
 Thompson's construction is a way of converting a regular expression into a non-deterministic finite automation (NFA). It was designed by Ken Thompson. It is also called the McNaughton-Yamada-Thompson Algorithm. We normally would assume the regular expression is a postfix expression. It is already converted using the shunting yard algorithm.
 
 Example taken from [https://www.geeksforgeeks.org/regular-expression-to-nfa/](https://www.geeksforgeeks.org/regular-expression-to-nfa/)
+![thompsonexample](https://github.com/stevenJoyce/GraphTheoryProject/blob/master/images/thompsonexample.png)
 
 # References
 
